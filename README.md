@@ -16,7 +16,7 @@ banuprakashc@yahoo.co.in
 
 https://www.linkedin.com/in/banu-prakash-50416019/
 
-GitHub: https://github.com/BanuPrakash/REACT
+GitHub: https://github.com/BanuPrakash/aajtak
 
 -------------------------------------------------------------
 Softwares Required:
