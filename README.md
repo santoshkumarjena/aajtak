@@ -180,4 +180,122 @@ getEmployee(2); // get from cache
 ====
 memoization or memoisation is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
 
+Client  ===> Redis Cache Middle Tier ==> PHP
+									 ==> Java
+
+================
+
+ES 6 features:
+
+1) arrow function
+
+	function add(x,y) {
+
+	}
+
+	--
+
+	var add = (x,y) => {
+		return x + y
+	}
+
+2) let and const to declare block scope variables and constants
+
+
+var g = 100;
+const PI = 3.14159; // constant
+
+function doTask() {
+	var a = 10;
+	if( g > a ) {
+		let b = 20; // visible only within if block
+		c= 50;
+	} 
+
+	console.log(g, a, b, c); // b is not accessble here
+}
+
+doTask();
+console.log(g, a, b, c);
+
+3) Destructuring and spread operators
+
+3.1 array
+
+var data = [6,2,6,11,44];
+// old way ==> var a = data[0]; var b  = data[1];
+
+var [a,b, ...others] = data
+
+console.log(a); // 6
+console.log(b); // 2
+
+console.log(others); // 6, 11, 44
+
+
+3.2) 
+
+var product = {"id":1,"name":"iPhone","price":124447.44,"category" : "mobile" };
+
+var {name, price} = product;
+
+var {name: n, price: p} = product;
+
+ 
+
+Clone:
+var product = {"id":1,"name":"iPhone","price":124447.44,"category" : "mobile" };
+
+var clone = {...product}; // different memory location
+
+var ref = product; // reference
+
+var data = [5,2];
+
+var clone = [...data]; 
+
+==
+
+4) Promise API
+	Asynchronous calls returns a Future result
+
+	Synchronous call:
+
+	var result = doTask();
+	console.log("called only after doTask() is completed");
+
+	---
+	Asynchronous calls
+
+	doTask().then(
+		ret => console.log(ret), /* resolved */
+		rej => console.log(rej) /* rejected */
+	);
+	console.log("called before doTask() is completed");
+
+
+5) async await
+6) ES 6 module system
+7) generator
+8) new String template literal
+
+var name = "Raja";
+
+	var msg =  `
+		Hello ${name}
+		Good day!!
+
+`;
+
+
+old:
+
+msg = "Hello" + name + " Good Day!"
+
+
+=====================
+
+
+
+
 
