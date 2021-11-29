@@ -293,9 +293,129 @@ old:
 msg = "Hello" + name + " Good Day!"
 
 
-=====================
+========================
+
+NodeJS
+ ==> platform with v8 engine and libuv c++ libraries to execute JavaScript code
+
+* can be used to build APIs [ RESTful / GraphQL]
+* Realtime application [ update dashboard ]
+* Streaming platform for [ OTT => Netflix, Amazon] 
+* platform for developing client side web application
+
+Why Node for developing client side web application?
+1)  Code is written in TypeScript / LiveScript / DART / JSX, ES 6, ...
+None of this is understood by JS engine, we need to transcompile, preprocessor
+
+==> TSC ==> TypeScript Compiler
+
+a.ts ==> tsc a.ts ==> a.js
+
+==> Babel
+ a.js [ ES 6] ==> babel ==> a.js [ ES 5] ==> Compatable
+
+2) TESTING
+	Unit testing / E2E 
+
+3) Static Code analysis ==> Linting
+
+4) Minify and Uglify your code and bundle your code
+	Minify ==> remove white spaces from code
+	Uglify => big names to small names
+
+	a.js, b.js , c.js ==> bundle.js
+
+	<script src="bundle.js"></script>
 
 
+===========
+
+Build tools for NodeJS
+1) Grunt
+Grunt is a JavaScript task runner, a tool used to automatically perform frequent tasks such as minification, compilation, unit testing, and linting.
+2) Gulp
+3) Webpack
+
+==================
+
+NPM ==> Node Package Manager
+* manage dependencies
+* run scripts
+* publish to repository
+
+npm init -y
+
+initialize a node project
 
 
+package.json
 
+// libraries required in production mode
+dependencies : {
+	react
+},
+
+// libraries required for development mode [ tsc, babel, testing librarires]
+devDependencies : {
+
+}
+
+"scripts": {
+    "test": "mocha --reporter spec",
+    "start" : "node a.js"
+    "dev": "webpack --mode production" 
+  },
+
+
+  npm start
+  npm test
+  npm run dev
+
+  ===
+
+  webpackexample> npm i webpack webpack-cli webpack-dev-server -D
+
+  "webpack-dev-server": "^4.6.0"
+
+  ^4.6.0 any latest version greater than or equal tp 4.6.0
+
+  ~4.6.0 any version which is "4", minor version and patch can be latest
+  	4.7.0 is valid
+  	4.7.7 is valid
+  	5.0.0 is invalid
+
+  4.6.0 exact version
+  
+  ===
+
+  Other team members:
+
+  webpackexample> npm install
+
+
+  SourceMap is avaialble in development mode and not in production
+
+
+==
+npm run dev
+check code
+
+npm run prod
+check code
+  npm i html-webpack-plugin -D
+
+HTML Webpack Plugin:
+This is a webpack plugin that simplifies creation of HTML files to serve your webpack bundles.
+
+index.html
+<script src="dist/main.js"></script>
+<style> .. </style>
+
+
+==
+
+Babel
+
+Babel is a free and open-source JavaScript transcompiler that is mainly used to convert ECMAScript 2015+ /ES6 code into a backwards compatible version of JavaScript that can be run by older JavaScript engines.
+
+webpack> npm i @babel/core babel-loader @babel/preset-env -D
