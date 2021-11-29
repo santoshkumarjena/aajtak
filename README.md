@@ -419,3 +419,21 @@ Babel
 Babel is a free and open-source JavaScript transcompiler that is mainly used to convert ECMAScript 2015+ /ES6 code into a backwards compatible version of JavaScript that can be run by older JavaScript engines.
 
 webpack> npm i @babel/core babel-loader @babel/preset-env -D
+
+=================
+
+
+Webpack
+ ==> Build tool
+ ==> by default "src/index.js" is the entry point
+ => by default "dist/main.js" is the bundle file
+
+ HtmlWebpackPlugin ==> automates including "bundle file" in "index.html"
+
+ Webpack-dev-server -> lightweight HTTP server; compiled code is deployed on this server [ push ]
+
+ Babel ==> ES6+ to downward compatiblity
+
+ =========================================
+
+ 
