@@ -436,4 +436,185 @@ Webpack
 
  =========================================
 
- 
+ Day 2
+
+Webpack ==> HtmlWebpackPlugin, @babel/core, babel-loader
+webpack.config.js ==> Plugins, rules for loaders [ babel-loader, ts-loader, css-loader]
+==> optimization, change entry point and output file
+
+
+Callback hell in Promise API
+method1().then(
+	res => method2(res).then( 
+	sec => method3(sec).then(third => method4(third)))
+)
+
+fetch('https://jsonplaceholder.typicode.com/users/2')
+.then( response => response.json())
+.then(data => console.log(data));
+
+Alternate to this is using async and await
+
+async function doTask() {
+	let response = await fetch('https://jsonplaceholder.typicode.com/users/2');
+	let data = await response.json();
+	console.log(data);
+}
+
+doTask();
+
+======================================
+
+React Library
+
+Client side rendering and Server side Rendering
+
+CSR:
+	data is sent to client [ browser / mobile]; client converts the data to presentation
+	Server has less work to do
+	* JS template libraries: jQuery, handlebars, Mustache, underscore, ..
+
+SSR:
+	data is rendered to presentation and sent to client [html]
+	client is light weight; server has more work to do
+	SSR templates: php, jsp, thymeleaf, pug, jade, EJS, handlebars, Mustache, NextJS
+
+
+Single Page Applications [ SPA] index.html with many views
+Challenges while building SPAs:
+1) data binding
+	interpolation 
+	one-way binding [ data => presentation]
+	two-way binding [ data <=> presentation]
+2) Routers
+	http://localhost:8080/products/iPhone
+	http://localhost:8080/products/OnePlus
+	http://localhost:8080/products/
+	http://localhost:8080/cart
+
+	Why?
+	* Bookmark
+	* Navigation between views
+	* Lazy loading of modules
+	http://localhost:8080/cart then only cart module is loaded into browser
+	* Guard the route
+3) Auto re-rendering pages when data changes
+
+MVC ==> Model View Controller
+Model is business data
+View is template
+Controller performs actions based on user input
+
+Options to build SPA
+1) Backbone ==> MVC Framework
+2) Angular ==> MVC Framework
+	  [ Module, component, services, routers, guard, pipes, directives]
+3) React ==> View Library
+	==> Facebook, Twitter, wallmart
+
+
+SSR ==> swiggy [ menu is rendered]
+
+CSR ==> needs rendering based on user preference
+
+============
+
+codepen.io
+
+JS Preprocessor:
+Babel
+
+libraries:
+https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js
+https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js
+
+Reconcillation is a process where VDOM is converted into DOM  [ UI ]
+renderes available
+https://github.com/chentsulin/awesome-react-renderer
+
+ReactDOM
+react-dom - A declarative, efficient, and flexible JavaScript library for building user interfaces.
+
+Build your own renderer:
+https://www.npmjs.com/package/react-reconciler
+
+ createInstance(type, props) {
+    var btn = docuemnt.createElement("button",. ..);
+  },
+  // ...
+  supportsMutation: true, // it works by mutating nodes
+  appendChild(parent, child) {
+     docuemtn.getElementById("parent").appendChild(btn);
+  },
+
+====
+let Welcome = React.createElement("h1", null , "Welcome to React!!!");
+
+ReactDOM.render(Welcome, document.getElementById("app"));
+
+===
+
+
+
+Functional Component and Class Components can be used to create React elements
+
+// return JSX will be react element
+function Welcome() {
+  return <div>
+       <h1> Hello World !!</h1>  
+       <p> Good Day !!!</p>
+    </div>
+}
+
+ReactDOM.render(<Welcome />, document.getElementById("app"));
+
+
+React.createElement("div", null, React.createElement("h1", null, "Hello World!!"));
+
+===
+
+props is data passed from parent to child
+
+// return JSX will be react element
+function Welcome(props) {
+  return <div>
+       <h1>{props.title}</h1>  
+       <p>{props.msg}</p>
+    </div>
+}
+
+ReactDOM.render(<Welcome title="Welcome to React" msg="Good day!!!"/>, document.getElementById("app"));
+
+===========
+
+var data = [
+    {"id":1,"name":"iPhone","price":124447.44,"category" : "mobile"},
+    {"id":2,"name":"Onida","price":4444.44,"category" : "tv"},
+    {"id":3,"name":"OnePlus 6","price":98444.44,"category" : "mobile"},
+    {"id":4,"name":"HDMI connector","price":2444.00,"category" : "computer"},
+    {"id":5,"name":"Samsung","price":68000.00,"category" : "tv"}];
+
+
+function ProductList({title, products}) {
+	return <div>
+				<h1> {title} </h1>
+				{
+					products.map(p => <Product product={p} />)
+				}
+		</div>
+}
+
+function Product(props) {
+	return <div>
+				<h2> {props.product.name},  {props.product.price} </h2>
+		</div>
+}
+
+ReactDOM.render(<ProductList title="Products list" products={data} />,  document.getElementById("app"));
+
+=====
+
+
+
+
+
