@@ -613,8 +613,25 @@ function Product(props) {
 ReactDOM.render(<ProductList title="Products list" products={data} />,  document.getElementById("app"));
 
 =====
+create a scaffolding code using "create-react-app"
 
+npx create-react-app customerapp
 
+class Component
+* state / instance variables
+* behaviour / methods
+
+render() returns JSX
+
+main.chunk.js
+contains all react components
+
+bundle.js
+	contains react libarrires and compilation
+vendors....js 
+	contains 3rd party librarires from "node_modules"
+
+=============================
 
 
 
