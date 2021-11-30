@@ -37,15 +37,35 @@ export default class CustomerList extends Component {
         ],
     };
 
+    constructor(props) {
+        super(props);
+        this.state.complete = this.state.customers;
+    }
     render() {
         return (
             <div>
-                <Filter />
+                <Filter filterEvent={(txt) => this.filterCustomer(txt)}/>
                 {
-                    this.state.customers.map(c => <CustomerRow />)
+                    this.state.customers.map(c => <CustomerRow 
+                        delEvent={(id) => this.deleteCustomer(id)}
+                        customer ={c} key={c.id}/>)
                 }
             </div>
         )
     }
     
+    deleteCustomer(id) {
+        let custs = this.state.customers.filter(c => c.id !== id);
+        // async function to update the state
+       this.setState({
+           customers: custs
+       })
+    }
+
+    filterCustomer(txt) {
+        let custs = this.state.complete.filter(c => c.lastName.toUpperCase().indexOf(txt.toUpperCase()) >=0 )
+        this.setState({
+            customers: custs
+        })
+    }
 }

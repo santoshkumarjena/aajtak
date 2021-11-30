@@ -633,5 +633,33 @@ vendors....js
 
 =============================
 
+webpack-dev server pushes the build files directly to browser
+
+npm build
+
+====
+
+
+export default class CustomerRow extends Component {
+    render() {
+        let {id, firstName, lastName} = this.props.customer;
+        return (
+            <div className="row">
+                {firstName} &nbsp; {lastName} 
+                <button type='button' onClick={() => this.deleteRow(id)}>&times;</button>
+            </div>
+        )
+    }
+
+    deleteRow(id) {
+        console.log("row ", id);
+    }
+}
+
+===
+
+Whenever state or props changes the react component and its children are re-rendered
+
+
 
 
