@@ -661,5 +661,105 @@ export default class CustomerRow extends Component {
 Whenever state or props changes the react component and its children are re-rendered
 
 
+=======================================
+
+Testing react application
+1) Unit testing and integration testing
+2) e2e testing
+
+JS Unit testing libarires
+1) Jasmine
+2) JEST
+3) Mocha
+
+
+Angular Test Bed is built on top of Jasmine
+React Testing library is built on top of JEST
+Express.js ==> prefer mocha
+
+jest-dom adds custom jest matchers for asserting on DOM nodes.
+
+Enyzme can also be added
+
+============================
+
+* getByXXX() ==> returns element if found; throws exception if not found
+* queryByXXX() ==> returns element if found; null if not found
+* findByXXX() ==> eventualy created component; async call
+
+<button ...>
+
+	getByRoleName('button')
+
+	getAllByRoleName('button')
+
+
+<input />
+		getByRoleName('input')
+
+	 <input type="text" placeholder="search by name" >
+	 
+	 getByPlaceHolderText("search by name");
+
+
+	<h1>Welcome to REACT </h1>
+
+	getByText(/react/i) 
+
+can use DOM use:
+
+document.querySelector('.row');
+
+============================
+
+AAA ==> Assemble Action Assert
+
+// test suite
+describe("name", () => {
+	// test spec
+	it("sepec 1", () => {
+			action
+			assert
+	})
+	// test spec
+	it("sepec 1", () => {
+			action
+			assert
+	})
+	// test spec
+	test("sepec 1", () => {
+			action
+			assert
+	})
+
+})
+
+==
+
+npm test
+
+npm test -- --coverage
+
+
+
+==
+screen.debug();
+ 			<body>
+        <div>
+          <div
+            class="row"
+          >
+            Monica
+              
+            Geller
+            <button
+              type="button"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      </body>
+
 
 
